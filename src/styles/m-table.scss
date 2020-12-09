@@ -1,0 +1,27 @@
+.m-table {
+  width: 100%;
+  overflow-x: auto;
+  table {
+    width: 100%;
+    thead {
+      tr {
+        th {
+          padding: 6px 8px;
+          font-size: 1.05rem;
+          text-align: left;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          color: #505050;
+          padding: 3px 8px;
+          font-size: 0.9rem;
+          text-align: left;
+          font-weight: lighter;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.m-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.15);
+
+  &__body {
+    padding: 20px;
+  }
+  &__actions {
+    padding: 20px;
+    padding-top: 0;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@include media-breakpoint(md) {
+  .m-card {
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    &__body {
+      padding: 12px;
+    }
+    &__actions {
+      padding: 12px;
+      padding-top: 0;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+:root {
+  --color-primary: rgb(83, 100, 255);
+  --color-subtitle: rgb(87, 146, 255);
+  --color-font-disable: rgb(155, 155, 155);
+
+  --margin-spacer: 20px;
+
+  // z-index
+  --z-nav: 100;
+  --z-header: 100;
+  --z-loading: 90;
+  --z-event: 80;
+  --z-chatbot: 70;
+
+  --color-active: #176fe2;
+  --background-active: #ecf4ff;
+  --background-hover: #f5f5f5;
+
+  // session
+  --color-session-event: #178ae2;
+  --color-session-task: #00af3d;
+  --color-session-evaluation: #e8a834;
+  --color-session-: #ff4b4b;
+}
+
+// .v-application * {
+//   color: var(--color-font);
+// }

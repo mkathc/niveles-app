@@ -1,0 +1,125 @@
+.m-btn {
+  padding: 14px 24px 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09rem;
+
+  border-radius: var(--border-radius-low);
+  transition: var(--time-transition);
+  cursor: pointer;
+
+  border: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  &:focus {
+    outline: none;
+  }
+
+  &__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.65);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      height: 16px;
+      width: 16px;
+      border-radius: 100%;
+      border: 2px solid #fff;
+      border-top-color: transparent !important;
+      border-left-color: transparent !important;
+      animation: rotate infinite var(--time-transition-high) linear;
+    }
+  }
+
+  &--small {
+    padding: 8px 16px 6px;
+    font-size: 0.7rem;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--rounded {
+    border-radius: var(--border-radius-high);
+  }
+
+  &--disabled {
+    opacity: 0.35;
+    box-shadow: none !important;
+    pointer-events: none;
+  }
+
+  &--loading {
+    position: relative;
+    pointer-events: none;
+    box-shadow: none !important;
+  }
+
+  &--icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &:active {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    & .fa {
+      font-size: 160%;
+    }
+  }
+
+  @each $key, $value in $colors {
+    &--#{$key} {
+      background: nth($value, 3);
+      box-shadow: 0 3px 14px -4px nth($value, 4);
+      & * {
+        color: nth($value, 6) !important;
+      }
+
+      &:hover {
+        background: nth($value, 4);
+      }
+      &:active {
+        background: nth($value, 5);
+      }
+      & .m-btn__loader::before {
+        border-color: nth($value, 4);
+      }
+      &.m-btn--text {
+        // background: transparent;
+        background: nth($value, 1);
+        box-shadow: none;
+        & * {
+          color: nth($value, 3) !important;
+        }
+
+        &:hover {
+          background: nth($value, 2);
+        }
+        &:active {
+          background: nth($value, 2);
+        }
+      }
+    }
+  }
+}
