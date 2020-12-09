@@ -18,11 +18,10 @@
             <div
               v-for="(alternative, a_idx) in question.alternatives"
               :key="a_idx"
-              
               class="category-text-alternative transform-scale ml-4"
               :class="{
-                'alternative--correct': question.show_correct && a_idx === question.answerCorrect,
-                'alternative--incorrect': question.show_correct && a_idx !== question.answerCorrect && a_idx === question.selected
+                'alternative--correct': question.show_correct && question.alternatives[a_idx] === question.answerCorrect,
+                'alternative--incorrect': question.show_correct && question.alternatives[a_idx] !== question.answerCorrect && question.alternatives[a_idx] === question.selected
               }"
               @click="selectAlternative(question, a_idx)"
             >{{alternative}}</div>
@@ -106,7 +105,7 @@ export default {
     selectAlternative(question, a_idx) {
       if (!question.show_correct) {
         question.show_correct = true;
-        question.selected = a_idx;
+        question.selected = question.alternatives[a_idx];
         this.quiz.splice();
       }
     },
